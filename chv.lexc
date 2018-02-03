@@ -2,37 +2,47 @@ Multichar_Symbols
 
 %<n%>                ! Имя существительное
 %<pl%>               ! Множественное число
-%<nom%>              ! Именительный падеж
-%<ins%>              ! Творительный падеж
-
-%{A%}                ! Архифонема [а] или [е]
-%{Ă%}
-%{м%}
-
+%{A%}
+%{Ӑ%}
+%{м%} 
+%<ins%>
+%<gen%>
 %>                   ! Граница морфемы
 
 LEXICON Root
 
-Nouns ;
+Nouns ; 
 
 LEXICON CASES 
 
-%<nom%>:         # ; 
-%<ins%>:%>п%{A%} # ;
-%<gen%>:%>%{Ă%}н # ;
+%<nom%>:                  # ;
+%<ins%>:%>п%{A%}          # ;
+%<gen%>:%>%{Ӑ%}%н         # ;
+%<dat%>:%>%{A%}           # ;
+%<loc%>:%>р%{A%}          # ;
+%<abl%>:%>р%{A%}н         # ;
+%<ter%>:%>ш%{Ӑ%}н         # ; 
 
 LEXICON PLURAL
 
-             CASES ;
-%<pl%>:%>се%{м%} CASES ;
+	                  CASES ;
+%<pl%>:%>се%{м%}          CASES ;
 
-LEXICON N
+LEXICON P
 
-%<n%>: PLURAL ;
+                          PLURAL ;
+%<px1sg%>:%{Ӑ%}м          PLURAL ;
+%<px2sg%>:%y              PLURAL ;
+%<px3sp%>:%ӗ              PLURAL ;
+%<px1pl%>:%{Ӑ%}м%{Ӑ%}р    PLURAL ;
+%<px2pl%>:%{Ӑ%}р          PLURAL ;
+
+
+LEXICON N 
+
+%<n%>:                    P ;
 
 LEXICON Nouns
 
-урам:урам N ;     ! "улица"
-пакча:пакча N ;   ! "сад"
-хула:хула N ;     ! "город"
-канаш:канаш N ;   ! "совет"
+автан:автан N ;    
+автобус:автобус N ;  
